@@ -36,7 +36,9 @@ Given these challenges, we developed two complementary approaches:
 1. **Simulation-Based Solution**: To address the overtourism problem in Cagliari, we designed a simulation model based on information from research papers and historical insights into tourism patterns. This approach allowed us to model potential overtourism scenarios and assess their impact.
 2. **Raw Data with QML for Weather Alerts**: Despite the data limitations, we used the available raw data to develop a Quantum Machine Learning (QML) model. This model focused on predicting weather-related alert conditions, which might influence or correlate with overtourism events and environmental hazards.
 
-## Solution 1: Simulating Overtourism
+## Solution 1: Simulating Overtourism (combined_dataset__analysis (3).ipynb)
+
+### File -> combined_dataset__analysis (3).ipynb
 
 ### Simulated Data
 Due to the lack of comprehensive real-world data, we created a simulated dataset reflecting various factors influencing tourism and environmental conditions:
