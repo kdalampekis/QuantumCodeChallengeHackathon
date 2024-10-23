@@ -1,60 +1,98 @@
-# Quantum Code Challenge Hackathon / Smart City QC Wizard Challenge
-Quantum Code Challenge Hackathon for Smart Cities at CTE - Cagliari Digital Lab
+# Smart City QC Wizard Challenge: Simulating Overtourism and Weather Alerts in Cagliari
 
-[Quantum Code Challenge](https://www.cagliaridlab.it/en/event.page?contentId=EVT881) is a entirely online hackathon on quantum computing applied to smart cities in the [CTE Cagliari DLAB](https://www.cagliaridlab.it/) project framework, organised by [CRS4](https://www.crs4.it/) in collaboration with [Open Campus](https://www.opencampus.it/) and with the endorsement of [Qitaly](https://qworld.net/qitaly/), the italian representative among the national active groups of the QWorld organization.
-The event takes place entirely online from 22 to 25 October 2024! 
+This repository contains the code and models developed for the **Smart City QC Wizard Challenge**. The objective was to create a system capable of predicting overtourism events and environmental hazards in Cagliari, Italy, using Quantum Machine Learning (QML) and simulations. 
 
+## Team Members
+0. Name: email|discord_id
 
-[<img src="https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png" width="150">](https://account.qbraid.com?gitHubUrl=https://github.com/crs4/QuantumCodeChallengeHackathon.git&redirectUrl=SmartCityQCWizard)
-## Project Participation Rules and Guidelines
-To ensure a smooth and fair experience for all participants, please carefully read and adhere to the following rules and guidelines.
+1. Epameinondas Douros: EpaDouros@gmail.com|352580588655476765
+2. Konstantinos Dalampekis: konstantinosdalampekis@gmail.com|762989571487039498
+3. Aggelos Kastrinellis: angelkastr@gmail.com|325639468684017665
+4. Evripidis Koutsoumpas:ekoutsioumpas@gmail.com
 
-### Eligibility:
-  1. To participate in the project, you must be successfully enrolled in the [Quantum Code Challenge Hackathon](https://www.cagliaridlab.it/it/event.page?contentId=EVT881) 
-  2. All nationalities, genders, and age groups are welcome to participate in the projects.
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Initial Data Analysis](#initial-data-analysis)
+- [Solution 1: Simulating Overtourism](#solution-1-simulating-overtourism)
+- [Solution 2: Predicting Weather Alerts with QML](#solution-2-predicting-weather-alerts-with-qml)
+- [Model Development](#model-development)
+- [Results](#results)
+- [How to Run the Code](#how-to-run-the-code)
+- [Future Work](#future-work)
 
-### Project Work Period:
-  1. Work on your team repository from **October 22, 2024** to **October 25, 2024**.
-  2. Fork/duplicate the repository of your selected project. This forked/duplicated repository will be referred to as your _"Team repository"_.
-  3. Ensure your repository is public at the time of submission for judging purposes. All work inside your team repository will be considered the final submission for the project.
+## Project Overview
 
-### Project Submission:
-  1. Submit your team repository by **October 25, 2024, 3:00pm CET DST**.
-  2. Add the GitHub submission link (public link of your Team repository) on the form that will be provided.
-  3. Do not modify your team repository after the deadline. Any modifications after the submission deadline may lead to disqualification.
+Overtourism and environmental hazards pose significant challenges to cities, affecting infrastructure, environment, and residents' well-being. This project aims to provide solutions for predicting these events in Cagliari using Quantum Machine Learning (QML) and simulations based on available data and insights from research papers.
 
-### Final session:
-  1. Project finalists will be announced on October 25, 2024 at 4pm CET DST.
-  2. Finalists present 2min. project deck on **The final session, October 25, 2024 at 4pm CET DST**.
-  3. Winners will be announced on Demo Day, October 25, 2024.
+## Initial Data Analysis
 
+### Data Challenges
+Upon initial analysis, we found that the dataset provided contained several missing values, and many variables lacked strong correlations that could directly explain overtourism or environmental hazards. Due to these limitations:
+- We could not build a strong argument or pattern directly from the raw data.
+- The missing values made it difficult to compose a reliable predictive model solely based on the provided datasets.
 
-## Code of Conduct
-  - Maintain the highest standards of ethical conduct throughout the project period. Any form of cheating, harassment, or misconduct will lead to disqualification and potential banning from future events. Maintain professionalism and respect in all interactions with fellow participants and the Womanium team.
-  - Respect intellectual property rights. Ensure that all work submitted is original and properly referenced if using third-party resources. Plagiarism or the use of unauthorized material will result in immediate disqualification.
-  - Adhere strictly to all deadlines. Late submissions will not be accepted.
+### Devised Solutions
+Given these challenges, we developed two complementary approaches:
+1. **Simulation-Based Solution**: To address the overtourism problem in Cagliari, we designed a simulation model based on information from research papers and historical insights into tourism patterns. This approach allowed us to model potential overtourism scenarios and assess their impact.
+2. **Raw Data with QML for Weather Alerts**: Despite the data limitations, we used the available raw data to develop a Quantum Machine Learning (QML) model. This model focused on predicting weather-related alert conditions, which might influence or correlate with overtourism events and environmental hazards.
 
-By participating in the Smart City QC Wizard Code Challenge, you agree to comply with all the rules and guidelines outlined above. Good Luck!
+## Solution 1: Simulating Overtourism
 
+### Simulated Data
+Due to the lack of comprehensive real-world data, we created a simulated dataset reflecting various factors influencing tourism and environmental conditions:
+- **Tourism Metrics**: Tourist attendance, cruise ship arrivals, hotel occupancy, and beach occupancy rates.
+- **Event Influence**: Major events like the Saint Efisio festival, concerts, and cultural festivals.
+- **Environmental Metrics**: Air pollution levels (PM10, PM2.5, CO, NO2), noise levels, and water/energy usage.
+- **Weather Conditions**: Temperature, wind speed, and humidity.
 
-# Challenge Scenario
-The municipality needs a way to detect potential alert situations 
+### Threshold Definitions
+We established thresholds to classify overtourism and environmental hazards:
+- **Overtourism**:
+  - Tourist attendance > 3000
+  - Cruise ship arrivals > 4 per day
+  - Hotel occupancy rate > 85%
+- **Environmental Hazard**:
+  - PM10 levels > 60 µg/m³
+  - Noise level > 80 dB
 
-The alerts can be of different degrees, so quantum machine learning in the future might be the best option to find patterns in data and start the alert procedure.  
+### 30-Day Forecast
+The QRNN and QLSTM models were used to forecast overtourism and environmental hazards for the next 30 days using the recursive forecasting method.
 
-The dataset is quite heterogeneous, it provides different sensor streams that will be described below. 
+## Solution 2: Predicting Weather Alerts with QML
 
-Participants are absolutely free to single out a set of different acquisitions and  build their Quantum Machine Learning application to provide alerts useful for the Municipality . 
+Using the raw data, we focused on predicting weather alert conditions as a proxy for environmental risk. By leveraging QML:
+- We developed models that used available metrics such as temperature, wind speed, and air pollution levels to predict hazardous conditions.
+- This approach allowed us to test the effectiveness of quantum models in identifying patterns and alerting city planners about potential environmental risks that could be correlated with overtourism.
 
-Universal and adiabatic quantum computing solutions are welcome. The Qbraid portal will provide the availability of the NEC Vector Annealer Service digital annealer for the teams who wish to develop an adiabatic solution. You will be asked to fill a form if you decide to use this resource
+## Model Development
 
-Both supervised and unsupervised learning approaches are welcome, up to you. If you choose supervised learning, you are in charge for singling out the subset of data and creating the labels.
+### Quantum Recurrent Neural Network (QRNN)
+We implemented a **QRNN** using PennyLane and Qiskit:
+- **Quantum Circuits**: Parameterized quantum circuits were used to encode and process sequential data, leveraging quantum entanglement and superposition.
+- **Training**: The QRNN was trained using gradient descent to minimize errors in predicting both overtourism events and weather alert conditions.
 
-# Submission guidelines
-- Teams submit their solution in a public github repository that might be a fork of the CRS4 repository for the challenge.
-- In the readme file they will list the name of the team members, their email, their github id and their discord id.  
-- We suggest using a dual license (like a MIT one) at the moment of the repository creation in order to allow reuse while maintaining copyright. (It’s easier for each team to commercialize their project later if they develop a very smart solution).
-- In the repository, the readme from the original QCWizard repo must be enclosed and completed with the missing data. 
--The submission repository will contain the data subset, all source codes and results and a slide deck that describes the solution.
-- Participants will be asked to quote other’s work usage appropriately.
+### Quantum Long Short-Term Memory (QLSTM)
+To handle long-term dependencies more effectively, we developed a **QLSTM** model:
+- The QLSTM processed time-series sequences using quantum gates simulating classical LSTM memory cells, capturing long-term patterns in the data.
 
+### Recursive Forecasting
+Both models were employed in a recursive forecasting approach:
+- Starting from the most recent known data, the models predicted future values iteratively for the next 30 days, using the output of each prediction as input for the next.
+
+## Results
+
+### Simulation-Based Predictions
+The simulation model successfully demonstrated potential overtourism patterns in Cagliari based on research data, highlighting peak periods and environmental risk zones. The model provided insights into managing overtourism more effectively.
+
+### QML-Based Weather Alerts
+The QML model, despite the limitations of the raw data, successfully predicted weather alert conditions, showing potential for integration with real-time data to enhance environmental monitoring systems.
+
+## How to Run the Code
+
+1. **Install Dependencies**:
+   Ensure the necessary Python libraries are installed:
+   ```bash
+   pip install pennylane qiskit scikit-learn matplotlib numpy pandas
+
+## Future Work
+We aim to gather more accurate and comprehensive data to refine our simulation model. This will help us better address the overtourism problem and prevent any potential environmental damage it may cause. Our goal is to develop a more precise and effective solution for sustainable tourism management.
