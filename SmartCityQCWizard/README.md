@@ -8,7 +8,7 @@ This repository contains the code and models developed for the **Smart City QC W
 1. Epameinondas Douros: EpaDouros@gmail.com|352580588655476765
 2. Konstantinos Dalampekis: konstantinosdalampekis@gmail.com|762989571487039498
 3. Aggelos Kastrinellis: angelkastr@gmail.com|325639468684017665
-4. Evripidis Koutsoumpas:ekoutsioumpas@gmail.com
+4. Evripidis Koutsoumpas: ekoutsioumpas@gmail.com
 
 ## Table of Contents
 - [Project Overview](#project-overview)
