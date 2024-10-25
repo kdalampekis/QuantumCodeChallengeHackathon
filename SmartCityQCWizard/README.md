@@ -79,6 +79,17 @@ Weather Classification:
 The focus shifted towards predicting weather conditions by classifying the weather status based on specific conditions like temperature, wind speed, and other relevant metrics.
 This classification allows for a better understanding of future weather conditions based on existing data, aiding in weather forecasting.
 
+For the weather classification we used
+Variational Quantum Classifier (VQC)  and the tools where based on the libaries of qiskit & qiskit_machine_learning.
+
+vqc = VQC(<br>
+    sampler=sampler,<br>
+    feature_map=feature_map,<br>
+    ansatz=ansatz,<br>
+    optimizer=optimizer,<br>
+    callback=callback_graph,<br>
+)<br>
+
 ### 2.File -> Unique_Attendance_QLSTM.ipynb
 
 Data Preprocessing:
@@ -101,6 +112,14 @@ Result Interpretation:
 The outcomes of the predictive analysis are visualized and compared with historical attendance trends.
 Insights are drawn about what factors impact attendance and how future trends might behave.
 Recommendations based on the analysis are suggested, offering guidance for improving attendance forecasting. 
+
+The quantum circuit used in the creation of the QLSTM is the following
+
+@qml.qnode(dev)<br>
+def quantum_circuit(inputs, weights):<br>
+    qml.templates.AngleEmbedding(inputs, wires=range(n_qubits))<br>
+    qml.templates.BasicEntanglerLayers(weights, wires=range(n_qubits))<br>
+    return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]<br>
 
 ## Model Development
 
