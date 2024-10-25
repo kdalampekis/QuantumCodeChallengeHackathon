@@ -66,6 +66,42 @@ Using the raw data, we focused on predicting weather alert conditions as a proxy
 - We developed models that used available metrics such as temperature, wind speed, and air pollution levels to predict hazardous conditions.
 - This approach allowed us to test the effectiveness of quantum models in identifying patterns and alerting city planners about potential environmental risks that could be correlated with overtourism.
 
+### 1.File -> Total_Analysis_Weather_QVC_2.ipynb
+
+This Jupyter notebook focuses on analyzing weather data and exploring potential correlations between different environmental variables. Here's a brief overview of the workflow and insights:
+
+Data Analysis:
+
+We initially explored and combined various datasets to investigate correlations between different weather and environmental factors.
+After comprehensive analysis, it was observed that there were limited significant correlations between the variables.
+Weather Classification:
+
+The focus shifted towards predicting weather conditions by classifying the weather status based on specific conditions like temperature, wind speed, and other relevant metrics.
+This classification allows for a better understanding of future weather conditions based on existing data, aiding in weather forecasting.
+
+### 2.File -> Unique_Attendance_QLSTM.ipynb
+
+Data Preprocessing:
+
+Multiple datasets are loaded, each representing attendance data for different periods.
+Initial preprocessing steps include data cleaning, handling missing values, and merging datasets to form a unified structure.
+The analysis focuses on identifying unique areas and metrics related to attendance using distinct categories such as areaAnalisi.
+Exploratory Data Analysis (EDA):
+
+Visualizations are generated to explore the trends in attendance, looking at how metrics change over time.
+Statistical summaries and plots are used to identify key patterns, distributions, and potential outliers in the data.
+Correlation analysis is performed to see if any relationships exist between variables and attendance behavior.
+Predictive Modeling with QLSTM:
+
+The analysis includes building predictive models to forecast attendance using historical data.
+A specialized model like QLSTM (Quantum Long Short-Term Memory) may be applied to predict attendance trends, leveraging its strength in handling time-series data.
+Model evaluation includes accuracy, error metrics, and validation of predictions against actual data to ensure reliability.
+Result Interpretation:
+
+The outcomes of the predictive analysis are visualized and compared with historical attendance trends.
+Insights are drawn about what factors impact attendance and how future trends might behave.
+Recommendations based on the analysis are suggested, offering guidance for improving attendance forecasting. 
+
 ## Model Development
 
 ### Quantum Recurrent Neural Network (QRNN)
